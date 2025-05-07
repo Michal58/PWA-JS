@@ -6,8 +6,8 @@ const filesToCache = [
     '/PWA-JS/js/main.js',
     '/PWA-JS/images/favicon.svg',
     '/PWA-JS/images/favicon.ico',
-    '/PWA-JS/subsites',
-    '/PWA-JS/subsites/index.html'
+    '/PWA-JS/subsites/about-me.html',
+    '/PWA-JS/subsites/gallery.html'
 ];
 
 self.addEventListener('install', (event) => {
@@ -17,14 +17,6 @@ self.addEventListener('install', (event) => {
         })
     );
 });
-
-// self.addEventListener('fetch', (event) => {
-//     event.respondWith(
-//         caches.match(event.request).then((response) => {
-//             return response || fetch(event.request);
-//         })
-//     );
-// });
 
 self.addEventListener('activate', (event) => {
     const cacheWhitelist = [cacheName];
@@ -47,6 +39,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((response) => {
+            console.log(response);
             return response || fetch(event.request).then((fetchResponse) => {
                 if (event.request.method === 'GET') {
                     return caches.open(cacheName).then((cache) => {

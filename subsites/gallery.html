@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+</head>
+
+<body>
+    <header class="header">  
+        <ul class="Header-links-ul">  
+           <a href="about-me.html" alt="about">
+               <li class="header-link" id="about-link">About Me</li>  
+           </a>
+           <a href="gallery.html" alt="gallery">
+               <li class="header-link" id="gallery-link">Gallery</li>
+           </a>
+       </ul>  
+    </header>  
+    <main>
+        <h1 class="title">Gallery</h1>
+        <div id="gallery-grid">
+            <div class="images-row" data-row-index="0">
+                <img src="../images/img0.jpg" alt="Image 0" class="thumbnail">
+                <img src="../images/img1.jpg" alt="Image 1" class="thumbnail">
+                <img src="../images/img2.jpg" alt="Image 2" class="thumbnail">
+            </div>
+            <div class="images-row" data-row-index="1">
+                <img src="../images/img3.jpg" alt="Image 3" class="thumbnail">
+                <img src="../images/img4.jpg" alt="Image 4" class="thumbnail">
+                <img src="../images/img5.jpg" alt="Image 5" class="thumbnail">
+            </div>
+            <div class="images-row" data-row-index="2">
+                <img src="../images/img6.jpg" alt="Image 6" class="thumbnail">
+                <img src="../images/img7.jpg" alt="Image 7" class="thumbnail">
+                <img src="../images/img8.jpg" alt="Image 8" class="thumbnail">
+            </div>
+
+            <div id="modal" class="modal hidden">
+                <span class="close-button">×</span>
+                <img class="modal-content" id="modal-image">
+            </div>
+        </div>
+    </main>
+    <script>
+        const galleryGrid = document.getElementById('gallery-grid');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeBtn = modal.querySelector('.close-button');
+
+        galleryGrid.addEventListener('click', (e) => {
+            if (e.target.tagName === 'IMG') {
+                modalImg.src = e.target.src;
+                modal.classList.remove('hidden');
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
