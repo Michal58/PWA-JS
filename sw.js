@@ -56,7 +56,7 @@ self.addEventListener('fetch', (event) => {
             });
         }).catch(() => {
             if (event.request.mode === 'navigate') {
-                return caches.match('/index.html');
+                return caches.match('/PWA-JS/index.html');
             }
         })
     );
