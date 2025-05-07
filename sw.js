@@ -5,7 +5,9 @@ const filesToCache = [
     '/PWA-JS/style.css',
     '/PWA-JS/js/main.js',
     '/PWA-JS/images/favicon.svg',
-    '/PWA-JS/images/favicon.ico'
+    '/PWA-JS/images/favicon.ico',
+    '/PWA-JS/subsites',
+    '/PWA-JS/subsites/index.html'
 ];
 
 self.addEventListener('install', (event) => {
