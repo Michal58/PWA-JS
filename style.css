@@ -48,6 +48,11 @@ main {
     justify-content: center;
 }
 
+.images-row figure {
+    margin-inline: 0;
+    font-size: 11px;
+}
+
 .thumbnail {
     width: 25vw;
     height: 25vw;
