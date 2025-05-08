@@ -13,6 +13,15 @@ body {
     text-align: center;
 }
 
+.terms-list {
+    margin: auto;
+    list-style-position: inside;
+}
+
+.terms-list li {
+    margin: 0;
+}
+
 main {
     padding: 2rem;
     font-size: 1rem;
